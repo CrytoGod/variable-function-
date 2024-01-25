@@ -14,6 +14,12 @@ console.log(playerName);
 // playerName = 'Bob';
 console.log(playerName);
 
+const buy = document.querySelector('#buyButton');
+const controlButtons = document.querySelectorAll('#player button');
+console.log(buy);
+console.log(controlButtons);
+
+
 function showPlayerScore() {
     console.log('Name: ' + playerName +', Score: ' + score);
 }
@@ -25,6 +31,21 @@ function addNumbers(num1, num2) {
 
 }
 
+function buyProduct() {
+    console.log('user clicked bought button');
+}
+
+function logMyId() {
+    console.log(this.id);
+}
+
 showPlayerScore();
 
 console.log(addNumbers(5, 10));
+
+buy.addEventListener('click', buyProduct);
+controlButtons.forEach(function (button){
+    button.addEventListener('click', logMyId);
+})
+
+// controlButtons.forEach(button => button.addEventListener('click', logMyId));
